@@ -6,62 +6,64 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
 @layer base {
   :root {
-    --background: 0 100% 98%;
-    --foreground: 340 10% 4%;
-    --card: 0 100% 98%;
-    --card-foreground: 340 10% 4%;
-    --popover: 0 100% 98%;
-    --popover-foreground: 340 10% 4%;
-    --primary: 340 68% 86%; /* Light rose */
-    --primary-foreground: 340 10% 4%;
-    --secondary: 340 50% 96%; /* Pale rose */
-    --secondary-foreground: 340 10% 4%;
-    --muted: 340 50% 96%; /* Pale rose */
-    --muted-foreground: 340 7% 40%;
-    --accent: 340 50% 96%; /* Pale rose */
-    --accent-foreground: 340 10% 4%;
-    --destructive: 340 84% 52%; /* Dark rose, works as destructive */
-    --destructive-foreground: 0 0% 98%;
-    --border: 340 30% 92%; /* Light rose */
-    --input: 340 30% 92%;
-    --ring: 340 68% 86%;
+    --background: 240 10% 98%; /* Light gray background */
+    --foreground: 30 15% 5%; /* Dark gray for text */
+    --card: 240 10% 98%; /* Light gray for cards */
+    --card-foreground: 30 15% 5%; /* Dark gray for card text */
+    --popover: 240 10% 98%; /* Light gray for popovers */
+    --popover-foreground: 30 15% 5%; /* Dark gray for popover text */
+    --primary: 30 70% 20%; /* #7D3F0F (a warm brownish color) */
+    --primary-foreground: 0 0% 98%; /* White for contrast */
+    --secondary: 240 20% 80%; /* Light gray for secondary elements */
+    --secondary-foreground: 30 15% 5%; /* Dark gray for secondary text */
+    --muted: 240 20% 90%; /* Light gray */
+    --muted-foreground: 30 10% 40%; /* Gray for muted text */
+    --accent: 240 20% 90%; /* Light gray for accents */
+    --accent-foreground: 30 15% 5%; /* Dark gray for accent text */
+    --destructive: 0 100% 50%; /* Red color for destructive actions */
+    --destructive-foreground: 0 0% 98%; /* White for destructive text */
+    --border: 240 10% 80%; /* Light gray border */
+    --input: 240 10% 90%; /* Light gray for inputs */
+    --ring: 30 70% 40%; /* Ring color matching the primary */
     --radius: 0.5rem;
-    --chart-1: 340 76% 66%; /* Vibrant rose shades for charts */
-    --chart-2: 12 76% 61%; /* Rose-pink mix */
-    --chart-3: 340 50% 80%; /* Light rose-pink */
-    --chart-4: 12 60% 78%;
-    --chart-5: 350 85% 60%;
+    --chart-1: 30 80% 60%; /* Chart color using a similar hue */
+    --chart-2: 12 76% 61%; /* Complementary color */
+    --chart-3: 197 37% 24%; /* Contrast color */
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
   }
 
   .dark {
-    --background: 340 10% 10%;
-    --foreground: 0 0% 98%;
-    --card: 340 10% 10%;
-    --card-foreground: 0 0% 98%;
-    --popover: 340 10% 10%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 340 68% 40%; /* Dark rose */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 340 20% 15%; /* Very dark rose */
-    --secondary-foreground: 0 0% 98%;
-    --muted: 340 20% 15%; /* Very dark rose */
-    --muted-foreground: 340 50% 70%;
-    --accent: 340 20% 15%; /* Very dark rose */
-    --accent-foreground: 0 0% 98%;
-    --destructive: 340 70% 38%; /* Darker rose-red for destructive */
-    --destructive-foreground: 0 0% 98%;
-    --border: 340 20% 15%; /* Very dark rose */
-    --input: 340 20% 15%;
-    --ring: 340 50% 65%;
-    --chart-1: 340 60% 55%; /* Vibrant rose for charts */
+    --background: 30 15% 5%; /* Dark gray background */
+    --foreground: 0 0% 98%; /* Light text for dark mode */
+    --card: 30 15% 5%; /* Dark gray for cards */
+    --card-foreground: 0 0% 98%; /* Light text for cards */
+    --popover: 30 15% 5%; /* Dark gray for popovers */
+    --popover-foreground: 0 0% 98%; /* Light text for popovers */
+    --primary: 30 70% 50%; /* Darker brown for primary */
+    --primary-foreground: 0 0% 98%; /* Light text */
+    --secondary: 240 20% 15%; /* Very dark gray */
+    --secondary-foreground: 0 0% 98%; /* Light text for secondary */
+    --muted: 240 20% 15%; /* Dark gray for muted elements */
+    --muted-foreground: 240 50% 80%; /* Light muted text */
+    --accent: 240 20% 15%; /* Dark gray for accents */
+    --accent-foreground: 0 0% 98%; /* Light accent text */
+    --destructive: 0 70% 30%; /* Darker red for destructive */
+    --destructive-foreground: 0 0% 98%; /* White for destructive text */
+    --border: 240 20% 15%; /* Dark gray border */
+    --input: 240 20% 15%; /* Dark gray for inputs */
+    --ring: 30 70% 30%; /* Dark ring color matching the primary */
+    --chart-1: 30 60% 50%; /* Darker chart colors */
     --chart-2: 160 60% 45%; /* Mix of shades */
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
 }
+
 
 
 @layer base {

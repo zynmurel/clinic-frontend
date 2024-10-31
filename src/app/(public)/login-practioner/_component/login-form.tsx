@@ -42,11 +42,7 @@ const LoginForm = () => {
     }
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onLogin)} className="space-y-6 w-full p-2 md:p-5 flex flex-col text-slate-600">
-                <div className=" grid gap-2">
-                    <p className=" font-bold text-2xl text-rose-400">Welcome, Valued Practitioner!</p>
-                    <p className=" text-slate-500 text-sm">Log in to manage your client appointments and access patient information.</p>
-                </div>
+            <form onSubmit={form.handleSubmit(onLogin)} className=" space-y-3 md:space-y-6 w-full p-2 md:p-5 flex flex-col text-secondary-foreground ">
                 <FormField
                     control={form.control}
                     name="username"
@@ -76,12 +72,12 @@ const LoginForm = () => {
                             </FormControl>
                             <FormMessage />
                             <div className=" flex justify-end">
-                                <p className=" text-rose-400 text-xs font-semibold cursor-pointer hover:text-rose-500">Forgot password?</p>
+                                <p className=" text-xs cursor-pointer hover:text-primary">Forgot password?</p>
                             </div>
                         </FormItem>
                     )}
                 />
-                <Button type="submit" className=" w-full text-white bg-rose-400">Login</Button>
+                <Button type="submit" className=" w-full text-white font-semibold">Login</Button>
             </form>
         </Form>
     );
