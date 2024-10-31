@@ -2,8 +2,6 @@ import Image from "next/image";
 import LoginForm from "./_component/login-form";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
 
 const visits = [{
     url: "https://www.facebook.com/avirojacorp",
@@ -17,11 +15,6 @@ const visits = [{
 }]
 
 const Page = async () => {
-    const session = await getServerSession()
-    //redirect to dashboard if authenticated
-    if(session){
-        redirect("/dashboard")
-    }
     return (
         <div className=" lg:w-full max-w-5xl md:grid-cols-2 grid p-5  lg:grid-cols-5 rounded-2xl shadow bg-white z-10">
             <div className=" lg:col-span-3 hidden md:flex flex-col p-10 justify-center items-center gap-2 rounded-lg">
