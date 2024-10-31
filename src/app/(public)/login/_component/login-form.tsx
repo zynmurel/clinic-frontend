@@ -14,6 +14,8 @@ import {
 } from "@/components/ui/form"
 import { Eye, EyeClosed } from "lucide-react";
 import { useState } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const loginSchema = z.object({
     username: z.string().min(2, {
@@ -25,6 +27,7 @@ const loginSchema = z.object({
 })
 
 const LoginForm = () => {
+    const router = useRouter()
     const [showPassword, setShowPassword] = useState(false)
 
     const form = useForm<z.infer<typeof loginSchema>>({
@@ -37,8 +40,24 @@ const LoginForm = () => {
 
     const onToggleShowPassword = () => setShowPassword(prev => !prev)
 
-    const onLogin = (values: z.infer<typeof loginSchema>) => {
-        console.log(values)
+    const onLogin = async (values: z.infer<typeof loginSchema>) => {
+        const response = await signIn('credentials',{
+            ...values,
+            redirect:false
+        })
+
+        if(response?.error){
+            if(response.error === "No User"){
+                form.setError("username", { message : "No user found"})
+            }else if(response.error==="Incorrect Password"){
+                form.setError("password", { message : "Incorrect Password"})
+            }
+        }
+
+        if(response?.status===200){
+            router.push("/dashboard")
+            router.refresh()
+        }
     }
     return (
         <Form {...form}>

@@ -2,6 +2,8 @@ import Image from "next/image";
 import LoginForm from "./_component/login-form";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
 const visits = [{
     url: "https://www.facebook.com/avirojacorp",
@@ -14,7 +16,12 @@ const visits = [{
     icon: <FaTiktok size={20} />
 }]
 
-const Page = () => {
+const Page = async () => {
+    const session = await getServerSession()
+    //redirect to dashboard if authenticated
+    if(session){
+        redirect("/dashboard")
+    }
     return (
         <div className=" lg:w-full max-w-5xl md:grid-cols-2 grid p-5  lg:grid-cols-5 rounded-2xl shadow bg-white z-10">
             <div className=" lg:col-span-3 hidden md:flex flex-col p-10 justify-center items-center gap-2 rounded-lg">
@@ -29,10 +36,10 @@ const Page = () => {
                     Medical Spa · Laser Hair Removal Service · Beauty, cosmetic & personal care
                 </p>
                 <div className=" flex flex-row gap-3 mt-10">
-                    {visits.map((vis, index) => (<Link href={vis.url} key={index} target="_blank"><div className=" p-1 rounded-full bg-amber-200 text-primary hover:brightness-90">{vis.icon}</div></Link>))}
+                    {visits.map((vis, index) => (<Link href={vis.url} key={index} target="_blank"><div className=" p-2 rounded-full bg-amber-100 text-primary hover:brightness-95">{vis.icon}</div></Link>))}
                 </div>
             </div>
-            <div className=" lg:col-span-2 bg-white rounded-2xl flex flex-col items-center justify-center">
+            <div className=" lg:col-span-2 bg-white flex flex-col items-center justify-center">
                 <Image
                     src="/images/layaw-logo.png"
                     alt="Descriptive Alt Text"
